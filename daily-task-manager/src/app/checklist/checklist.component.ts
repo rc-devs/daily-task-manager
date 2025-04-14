@@ -10,15 +10,16 @@ import { AddTaskComponent } from './add-task/add-task.component';
   styleUrl: './checklist.component.css'
 })
 export class ChecklistComponent {
-  constructor(private checklistService: ChecklistService){}
+  constructor(private checklistService: ChecklistService){  }
   addTask = false;
+
 
   onSubmit(){
     this.checklistService.onSubmitHandler()
   }
 
   onAddNewTask(){
-    this.addTask = true;
+    this.addTask= true;
   }
 
 }
