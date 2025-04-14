@@ -1,14 +1,15 @@
 
   @for (t of getDefaultChecklist(); track t.id){
-    <li>{{t.task}}
+    <div class="task-card">
+    <li>{{t.task}}</li>
       <label for="tasks">Select Task Status</label>
         <select #taskStatus name="taskStatus" (select)="toggleComplete($event.returnValue)">
             <option value="incomplete">Incomplete</option>
             <option value="complete">Complete</option>
             <option value="inProgress">In Progress</option>
         </select>
+    </div>
 
-    </li>
   }
 
 
