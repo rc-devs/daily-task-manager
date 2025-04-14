@@ -44,6 +44,18 @@ export class ChecklistService {
     // take form information task name, task status (complete: bool), and add to historical array (use local storage?)
   }
 
-  addNewTask(){}
+  addNewTask(newTask: string){
+     //create new object and add to array in service
+     let randomNumber = (Math.random()* 100).toString();
+
+     this.dailyTasks.unshift({
+       id: 't' + randomNumber,
+       complete: false,
+       task: newTask,
+     })
+     //set form status to remove form once submitted
+     this.taskFormStatus(false);
+     console.log (this.dailyTasks)
+  }
 
 }
