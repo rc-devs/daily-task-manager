@@ -19,7 +19,13 @@ export class ChecklistService {
     { id:"t11", complete: false, task: "Evening Meds"},
     { id:"t12", complete: false, task: "Brush Down Animals"}];
 
-    addTask = false;
+  public addTask = false;
+
+  taskStatus(bool: boolean){
+    this.addTask = bool
+   return this.addTask;
+  }
+
 
   constructor() { }
 

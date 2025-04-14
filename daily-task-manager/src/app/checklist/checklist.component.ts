@@ -10,22 +10,27 @@ import { AddTaskComponent } from './add-task/add-task.component';
   styleUrl: './checklist.component.css'
 })
 export class ChecklistComponent  {
-  constructor(private checklistService: ChecklistService){  }
+  constructor(public checklistService: ChecklistService){  }
 
-  addTask = false;
+  getTaskStatus(){
+    return this.checklistService.addTask
+  }
+
 
   onSubmit(){
     this.checklistService.onSubmitHandler()
   }
 
   onAddNewTask(){
-
+    //change .addTask to true to display form from add-task(child)
+    console.log(this.checklistService.addTask)
     if (!this.checklistService.addTask){
-      this.checklistService.addTask= true;
-    } else if (this.checklistService){
-      this.checklistService.addTask= false;
+      this.checklistService.taskStatus(true);
+    } else if (this.checklistService.addTask){
+      this.checklistService.taskStatus(false);
     }
-   this.addTask = this.checklistService.addTask
+    console.log(this.checklistService.addTask)
+   return this.checklistService.addTask
   }
 
 }

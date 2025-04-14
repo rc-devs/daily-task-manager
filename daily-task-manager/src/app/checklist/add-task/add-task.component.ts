@@ -12,6 +12,15 @@ export class AddTaskComponent {
 
   submitNewTask(){
 
+      console.log(this.checklistService.addTask)
+      if (!this.checklistService.addTask){
+        this.checklistService.taskStatus(true);
+      } else if (this.checklistService.addTask){
+        this.checklistService.taskStatus(false);
+      }
+      console.log(this.checklistService.addTask)
+     return this.checklistService.addTask
+
   }
 
 }

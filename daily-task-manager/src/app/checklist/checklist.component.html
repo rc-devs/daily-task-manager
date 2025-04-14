@@ -4,9 +4,9 @@
 
 
 
-@if (addTask){
+@if (getTaskStatus()){
   <app-add-task></app-add-task>
-} @else if (!addTask){
+} @else if (!getTaskStatus()){
 <button type="button" (click)="onAddNewTask()">Add New Task</button>
 }
 
