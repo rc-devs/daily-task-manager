@@ -5,8 +5,8 @@
       <label for="tasks">Select Task Status</label>
         <select #taskStatus name="taskStatus" (select)="toggleComplete($event.returnValue)">
             <option value="incomplete">Incomplete</option>
-            <option value="complete">Complete</option>
             <option value="inProgress">In Progress</option>
+            <option value="complete">Complete</option>
         </select>
     </div>
 
