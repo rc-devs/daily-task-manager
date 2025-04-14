@@ -1,0 +1,8 @@
+<form #form name="form" (submit)="onSubmitHandler(); $event.preventDefault()">
+  @for (t of dailyTasks(); track t.id){
+    <li>{{t.task}} <input type="checkbox" (input)="toggleComplete($event.returnValue, t)"></li>
+  }
+</form>
+<button type="submit">Submit</button>
+
+
