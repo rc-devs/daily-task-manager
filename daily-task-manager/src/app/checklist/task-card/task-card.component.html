@@ -1,5 +1,5 @@
 <form #form name="form" (submit)="onSubmitHandler(); $event.preventDefault()">
-  @for (t of dailyTasks(); track t.id){
+  @for (t of getDefaultChecklist(); track t.id){
     <li>{{t.task}} <input type="checkbox" (input)="toggleComplete($event.returnValue, t)"></li>
   }
 </form>

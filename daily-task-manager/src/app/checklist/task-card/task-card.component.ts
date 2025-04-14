@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ChecklistService } from '../../shared/services/checklist.service';
 
 @Component({
   selector: 'app-task-card',
@@ -9,6 +10,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class TaskCardComponent {
 
+    constructor(private checklistService: ChecklistService){}
+
+    getDefaultChecklist(){
+      return this.checklistService.dailyTasks;
+    }
 
     toggleComplete(check: boolean, task: object){
      //const foundTask = this.dailyTasks.filter(( id => task === this.dailyTasks ))
