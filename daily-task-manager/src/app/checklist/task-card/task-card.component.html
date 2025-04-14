@@ -1,8 +1,8 @@
-<form #form name="form" (submit)="onSubmitHandler(); $event.preventDefault()">
+
   @for (t of getDefaultChecklist(); track t.id){
     <li>{{t.task}} <input type="checkbox" (input)="toggleComplete($event.returnValue)"></li>
   }
-</form>
-<button type="submit">Submit</button>
+
+
 
 

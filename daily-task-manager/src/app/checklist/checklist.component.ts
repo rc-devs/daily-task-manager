@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TaskCardComponent } from './task-card/task-card.component';
+import { ChecklistService } from '../shared/services/checklist.service';
 
 @Component({
   selector: 'app-checklist',
@@ -8,5 +9,14 @@ import { TaskCardComponent } from './task-card/task-card.component';
   styleUrl: './checklist.component.css'
 })
 export class ChecklistComponent {
+  constructor(private checklistService: ChecklistService){}
+
+  onSubmit(){
+    this.checklistService.onSubmitHandler()
+  }
+
+  onAddNewTask(){
+    this.checklistService.addNewTask()
+  }
 
 }

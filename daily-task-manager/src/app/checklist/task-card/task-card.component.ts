@@ -20,11 +20,6 @@ export class TaskCardComponent {
 
     }
 
-    onSubmitHandler(){
-      console.log('submit connected')
-      window.confirm("Are you sure you would like to sumbit this form?")
-    }
-
 
 
 
