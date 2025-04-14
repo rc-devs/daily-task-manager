@@ -10,9 +10,20 @@ import { ChecklistService } from '../../shared/services/checklist.service';
 export class AddTaskComponent {
   constructor(public checklistService: ChecklistService){  }
 
-  submitNewTask(){
-    //set
+  submitNewTask(newTask: string){
+    //create new object and add to array in service
+    let randomNumber = (Math.random()* 100).toString();
+
+    this.checklistService.dailyTasks.unshift({
+      id: 't' + randomNumber,
+      complete: false,
+      task: newTask,
+    })
+    //set form status to remove form once submitted
     this.checklistService.taskFormStatus(false);
+    }
+
+
   }
 
-}
+
