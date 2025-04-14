@@ -16,9 +16,16 @@ export class TaskCardComponent {
       return this.checklistService.dailyTasks;
     }
 
-    toggleComplete(check: boolean){//change complete:false to complete:true, and update array
-
+    toggleTaskStatus(status: string){
+      console.log(status)
     }
+
+    deleteHandler(taskId:string){
+      console.log(taskId)
+    }
+
+
+
 
 
 
