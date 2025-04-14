@@ -13,7 +13,7 @@ export class ChecklistComponent  {
   constructor(public checklistService: ChecklistService){  }
 
   getTaskStatus(){
-    return this.checklistService.addTask
+    return this.checklistService.addTaskForm
   }
 
 
@@ -22,7 +22,7 @@ export class ChecklistComponent  {
   }
 
   onAddNewTask(){
-    this.checklistService.changeStatus();
+    this.checklistService.changeFormStatus();
   }
 
 }

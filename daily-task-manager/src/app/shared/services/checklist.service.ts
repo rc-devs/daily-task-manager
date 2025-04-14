@@ -19,22 +19,22 @@ export class ChecklistService {
     { id:"t11", complete: false, task: "Evening Meds"},
     { id:"t12", complete: false, task: "Brush Down Animals"}];
 
-  public addTask = false;
+  public addTaskForm = false;
 
-  taskStatus(bool: boolean){
-    this.addTask = bool
-   return this.addTask;
+  taskFormStatus(bool: boolean){
+    this.addTaskForm = bool
+   return this.addTaskForm;
   }
 
-  changeStatus(){
-    console.log(this.addTask)
-    if (!this.addTask){
-      this.addTask = true
-    } else if (this.addTask){
-      this.addTask = true;
+  changeFormStatus(){
+    console.log(this.addTaskForm)
+    if (!this.addTaskForm){
+      this.addTaskForm = true
+    } else if (this.addTaskForm){
+      this.addTaskForm = true;
     }
-    console.log(this.addTask)
-   return this.addTask
+    console.log(this.addTaskForm)
+   return this.addTaskForm
   }
 
   constructor() { }

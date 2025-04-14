@@ -11,7 +11,8 @@ export class AddTaskComponent {
   constructor(public checklistService: ChecklistService){  }
 
   submitNewTask(){
-    this.checklistService.taskStatus(false);
+    //set
+    this.checklistService.taskFormStatus(false);
   }
 
 }
