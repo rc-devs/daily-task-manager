@@ -1,6 +1,13 @@
 <form #form name="form" (submit)="onSubmit(); $event.preventDefault()">
 <app-task-card></app-task-card>
 
-<button (click)="onAddNewTask()">Add New Task</button>
+<button type="button" (click)="onAddNewTask()">Add New Task</button>
+
+
+@if (addTask){
+  <app-add-task></app-add-task>
+}
+
+
 <button type="submit">Submit</button>
 </form>
