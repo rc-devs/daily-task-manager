@@ -22,15 +22,7 @@ export class ChecklistComponent  {
   }
 
   onAddNewTask(){
-    //change .addTask to true to display form from add-task(child)
-    console.log(this.checklistService.addTask)
-    if (!this.checklistService.addTask){
-      this.checklistService.taskStatus(true);
-    } else if (this.checklistService.addTask){
-      this.checklistService.taskStatus(false);
-    }
-    console.log(this.checklistService.addTask)
-   return this.checklistService.addTask
+    this.checklistService.changeStatus();
   }
 
 }

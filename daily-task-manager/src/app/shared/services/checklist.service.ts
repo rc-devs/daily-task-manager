@@ -26,6 +26,16 @@ export class ChecklistService {
    return this.addTask;
   }
 
+  changeStatus(){
+    console.log(this.addTask)
+    if (!this.addTask){
+      this.addTask = true
+    } else if (this.addTask){
+      this.addTask = true;
+    }
+    console.log(this.addTask)
+   return this.addTask
+  }
 
   constructor() { }
 
