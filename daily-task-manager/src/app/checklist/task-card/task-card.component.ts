@@ -16,11 +16,7 @@ export class TaskCardComponent {
       return this.checklistService.dailyTasks;
     }
 
-    toggleComplete(check: boolean, task: object){
-     //const foundTask = this.dailyTasks.filter(( id => task === this.dailyTasks ))
-     //foundTask.id = check
-     console.log(check)
-     console.log(task)
+    toggleComplete(check: boolean){//change complete:false to complete:true, and update array
 
     }
 
