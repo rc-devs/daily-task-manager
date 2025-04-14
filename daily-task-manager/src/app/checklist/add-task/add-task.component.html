@@ -1,5 +1,5 @@
 <form #formAddTask name="form-add-task" (submit)="submitNewTask(taskInput.value); $event.preventDefault()">
-  <label for="inputTask">Task Name</label>
-  <input #taskInput type="text" name="taskInput" placeholder="Enter task name">
+  <label for="inputTask">Task Name: </label>
+    <input #taskInput type="text" name="taskInput" placeholder="Enter task name">
   <button type="submit">Add Task</button>
 </form>
