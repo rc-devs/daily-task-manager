@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ChecklistService {
+  constructor() { }
 
   dailyTasks = [
     { id:"t1", complete: false, task: "Make Bed"},
@@ -37,15 +38,11 @@ export class ChecklistService {
    return this.addTaskForm
   }
 
-  constructor() { }
-
-
-
   onSubmitHandler(){
     console.log('submit connected')
-    window.confirm("Are you sure you would like to sumbit this form?")
+    window.confirm("Are you sure you would like to submit this form?")
+    // take form information task name, task status (complete: bool), and add to historical array (use local storage?)
   }
-
 
   addNewTask(){}
 
