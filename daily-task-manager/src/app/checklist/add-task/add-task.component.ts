@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChecklistService } from '../../shared/services/checklist.service';
 
 @Component({
   selector: 'app-add-task',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './add-task.component.css'
 })
 export class AddTaskComponent {
-  onAddTask(){}
+  constructor(public checklistService: ChecklistService){  }
+
+  submitNewTask(){
+
+  }
+
 }

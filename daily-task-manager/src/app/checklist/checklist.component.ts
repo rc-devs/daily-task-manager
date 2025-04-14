@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { TaskCardComponent } from './task-card/task-card.component';
 import { ChecklistService } from '../shared/services/checklist.service';
 import { AddTaskComponent } from './add-task/add-task.component';
@@ -9,17 +9,23 @@ import { AddTaskComponent } from './add-task/add-task.component';
   templateUrl: './checklist.component.html',
   styleUrl: './checklist.component.css'
 })
-export class ChecklistComponent {
+export class ChecklistComponent  {
   constructor(private checklistService: ChecklistService){  }
-  addTask = false;
 
+  addTask = false;
 
   onSubmit(){
     this.checklistService.onSubmitHandler()
   }
 
   onAddNewTask(){
-    this.addTask= true;
+
+    if (!this.checklistService.addTask){
+      this.checklistService.addTask= true;
+    } else if (this.checklistService){
+      this.checklistService.addTask= false;
+    }
+   this.addTask = this.checklistService.addTask
   }
 
 }
