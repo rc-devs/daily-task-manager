@@ -44,18 +44,31 @@ export class ChecklistService {
     // take form information task name, task status (complete: bool), and add to historical array (use local storage?)
   }
 
-  addNewTask(newTask: string){
-     //create new object and add to array in service
+  addNewTask(newTask: string){//create new object and add to array in service
+     console.log('addNewTask runs') //test log
+
+     //get random number for use in new object id
      let randomNumber = Math.floor(Math.random()* 100).toString();
 
-     this.dailyTasks.unshift({
-       id: 't' + randomNumber,
-       status: 'incomplete',
-       task: newTask,
-     })
-     //set form status to remove form once submitted
-     this.taskFormStatus(false);
-     console.log (this.dailyTasks)
+     //check if any dailyTask.id are == random number
+     let checkDuplicate = this.dailyTasks.find(t  => t.id === ('t'+ randomNumber));
+
+    //if else for adding task
+    if (checkDuplicate?.id == 't'+ randomNumber){ //check for duplicate (match)
+      console.log('duplicate') //test log
+      this.addNewTask(newTask); //if duplicate found, rerun function
+    } else if (checkDuplicate?.id != 't'+  randomNumber) { //check for duplicate
+      //add new task to array
+      this.dailyTasks.unshift({
+        id: 't' + randomNumber,
+        status: 'incomplete',
+        task: newTask,
+      })
+    }
+
+    //set form status to remove component with form once submitted
+    this.taskFormStatus(false);
+    console.log (this.dailyTasks) //log new array
   }
 
 }
