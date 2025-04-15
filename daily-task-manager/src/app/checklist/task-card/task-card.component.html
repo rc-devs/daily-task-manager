@@ -8,7 +8,7 @@
             <option #inProgress name="inProgress" value="inProgress">In Progress</option>
             <option #complete name="complete" value="complete">Complete</option>
         </select>
-        <button (click)="deleteHandler(t.id)">Delete</button>
+        <button (click)="deleteHandler(t.id); $event.preventDefault()">Delete</button>
     </div>
   }
 
