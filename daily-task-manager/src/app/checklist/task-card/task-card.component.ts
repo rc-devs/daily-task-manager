@@ -9,7 +9,6 @@ import { ChecklistService } from '../../shared/services/checklist.service';
   styleUrl: './task-card.component.css'
 })
 export class TaskCardComponent {
-
     constructor(private checklistService: ChecklistService){}
 
     getDefaultChecklist(){
@@ -22,6 +21,8 @@ export class TaskCardComponent {
 
     deleteHandler(taskId:string){
       console.log(taskId)
+      this.checklistService.dailyTasks = this.getDefaultChecklist().filter(t  => t.id !== taskId);
+      console.log(this.checklistService.dailyTasks)
     }
 
 
