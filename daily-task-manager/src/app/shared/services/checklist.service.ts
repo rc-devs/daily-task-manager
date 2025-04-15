@@ -64,11 +64,12 @@ export class ChecklistService {
         status: 'incomplete',
         task: newTask,
       })
+       //set form status to remove component with form once submitted
+      this.taskFormStatus(false);
+      console.log (this.dailyTasks) //log new array
     }
 
-    //set form status to remove component with form once submitted
-    this.taskFormStatus(false);
-    console.log (this.dailyTasks) //log new array
+
   }
 
 }
