@@ -3,12 +3,12 @@
     <div class="task-card">
     <li>{{t.task}}</li>
       <label for="tasks">Task Status: </label>
-        <select #taskStatus name="taskStatus" (select)="toggleTaskStatus(taskStatus.value)">
+        <select #taskStatus name="taskStatus" type="select" (select)="toggleTaskStatus(taskStatus.value)">
             <option #incomplete name="incomplete" value="incomplete">Incomplete</option>
             <option #inProgress name="inProgress" value="inProgress">In Progress</option>
             <option #complete name="complete" value="complete">Complete</option>
         </select>
-        <button (click)="deleteHandler(t.id); $event.preventDefault()">Delete</button>
+        <button class="danger-btn" (click)="deleteHandler(t.id); $event.preventDefault()">Delete</button>
     </div>
   }
 
