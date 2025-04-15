@@ -15,7 +15,7 @@ export class TaskCardComponent {
       return this.checklistService.dailyTasks;
     }
 
-    toggleTaskStatus(status: string){
+    changeTaskStatus(status: string){
       console.log(status)
     }
 
