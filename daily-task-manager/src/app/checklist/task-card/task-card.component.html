@@ -5,7 +5,7 @@
       <label for="tasks">Task Status: </label>
         <select #taskStatus name="taskStatus">
             <option #incomplete name="incomplete" value="incomplete">Incomplete</option>
-            <option #inProgress name="inProgress" value="inProgress">In Progress</option>
+            <option #inProgress name="inProgress" value="in-progress">In Progress</option>
             <option #complete name="complete" value="complete">Complete</option>
         </select>
         <button (click)="changeTaskStatus(taskStatus.value); $event.preventDefault()">Change Status</button>
