@@ -46,7 +46,7 @@ export class ChecklistService {
 
   addNewTask(newTask: string){
      //create new object and add to array in service
-     let randomNumber = (Math.random()* 100).toString();
+     let randomNumber = Math.floor(Math.random()* 100).toString();
 
      this.dailyTasks.unshift({
        id: 't' + randomNumber,
