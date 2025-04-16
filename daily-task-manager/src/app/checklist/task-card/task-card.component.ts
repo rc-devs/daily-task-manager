@@ -28,6 +28,9 @@ export class TaskCardComponent {
       console.log(this.checklistService.dailyTasks)
     }
 
+    filterTasks(){
+
+    }
 
 
 

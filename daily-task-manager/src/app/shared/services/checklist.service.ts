@@ -68,8 +68,11 @@ export class ChecklistService {
       this.taskFormStatus(false);
       console.log (this.dailyTasks) //log new array
     }
-
-
   }
+/*
+  filterTasksByStatus(){
+    if(this.dailyTasks){
 
+    }
+  } */
 }
