@@ -1,6 +1,6 @@
 
   @for (t of getDefaultChecklist(); track t.id){
-    <div class="task-card">
+    <div class="{{t.status}}" >
     <li>{{t.task}}</li>
       <label for="tasks">Task Status: </label>
         <select #taskStatus name="taskStatus">
@@ -8,7 +8,7 @@
             <option #inProgress name="inProgress" value="in-progress">In Progress</option>
             <option #complete name="complete" value="complete">Complete</option>
         </select>
-        <button (click)="changeTaskStatus(t.id, taskStatus.value); $event.preventDefault()">Change Status</button>
+        <button class="change-status" (click)="changeTaskStatus(t.id, taskStatus.value); $event.preventDefault()">Change Status</button>
         <button class="danger-btn" (click)="deleteHandler(t.id); $event.preventDefault()">Delete</button>
     </div>
   }
