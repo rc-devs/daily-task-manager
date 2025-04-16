@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+import { Task } from '../shared/templates/task.model';
 
 @Component({
   selector: 'app-history',
@@ -7,6 +8,8 @@ import { Component, signal } from '@angular/core';
   styleUrl: './history.component.css'
 })
 export class HistoryComponent {
-  historyArray = signal([])
+  
+
+  historyArray = signal<Task[]>([])
 
 }

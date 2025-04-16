@@ -1,4 +1,4 @@
-<form #form name="form" (submit)="onSubmit(); $event.preventDefault()">
+<form #form name="form" (submit)="onSubmit(form); $event.preventDefault()">
   <app-task-card></app-task-card>
 
 @if (getTaskForm()){

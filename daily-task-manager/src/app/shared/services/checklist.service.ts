@@ -23,6 +23,7 @@ export class ChecklistService {
     { id:"t12", status:'incomplete', task: "Brush Down Animals", description: ''}]);
 
   public addTaskForm = false;
+  public history:any = "";
 
   taskFormStatus(bool: boolean){
     this.addTaskForm = bool
@@ -40,10 +41,12 @@ export class ChecklistService {
    return this.addTaskForm
   }
 
-  onSubmitHandler(){
+  onSubmitHandler(form:any){
+    console.log(form)
     console.log('submit connected')
     window.confirm("Are you sure you would like to submit this form?")
     // take form information task name, task status (complete: bool), and add to historical array (use local storage?)
+    this.history.set(form);
   }
 
   addNewTask(newTask: string, newDescription: string){//create new object and add to array in service

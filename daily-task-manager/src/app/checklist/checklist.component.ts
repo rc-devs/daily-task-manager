@@ -18,8 +18,8 @@ export class ChecklistComponent  {
     return this.checklistService.addTaskForm
   }
 
-  onSubmit(){
-    this.checklistService.onSubmitHandler()
+  onSubmit(form:any){
+    this.checklistService.onSubmitHandler(form)
   }
 
   onAddNewTask(){
