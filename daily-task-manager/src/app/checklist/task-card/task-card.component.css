@@ -11,13 +11,13 @@ div{
 }
 
 .in-progress {
-  border: solid 4px green;
-  background-color: rgb(36, 155, 36);
+  border: solid 4px blue;
+  background-color: rgb(93, 93, 223);
 }
 
 .complete {
-  border: solid 4px blue;
-  background-color: rgb(93, 93, 223);
+  border: solid 4px rgb(5, 65, 5);
+  background-color: rgb(63, 153, 63);
 }
 
 li {
