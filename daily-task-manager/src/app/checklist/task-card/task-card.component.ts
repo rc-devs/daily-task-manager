@@ -28,8 +28,8 @@ export class TaskCardComponent {
       console.log(this.checklistService.dailyTasks)
     }
 
-    filterTasks(){
-
+    onSubmit(){
+      this.checklistService.onSubmitHandler(this.checklistService.dailyTasks)
     }
 
 

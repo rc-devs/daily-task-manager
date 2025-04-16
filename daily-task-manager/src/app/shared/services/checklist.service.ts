@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 import { Task } from '../templates/task.model';
 
@@ -23,7 +23,7 @@ export class ChecklistService {
     { id:"t12", status:'incomplete', task: "Brush Down Animals", description: ''}]);
 
   public addTaskForm = false;
-  public history:any = "";
+  public history = signal<Task[]>([]);
 
   taskFormStatus(bool: boolean){
     this.addTaskForm = bool
@@ -41,12 +41,13 @@ export class ChecklistService {
    return this.addTaskForm
   }
 
-  onSubmitHandler(form:any){
-    console.log(form)
-    console.log('submit connected')
+  onSubmitHandler(taskList:Task[]){
     window.confirm("Are you sure you would like to submit this form?")
+    console.log(taskList)
+    console.log('submit connected')
     // take form information task name, task status (complete: bool), and add to historical array (use local storage?)
-    this.history.set(form);
+    this.history.set(taskList);
+    console.log(typeof this.history)
   }
 
   addNewTask(newTask: string, newDescription: string){//create new object and add to array in service

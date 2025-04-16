@@ -1,5 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { Task } from '../shared/templates/task.model';
+import { Component, inject, signal } from '@angular/core';
+import { ChecklistService } from '../shared/services/checklist.service';
 
 @Component({
   selector: 'app-history',
@@ -8,8 +8,10 @@ import { Task } from '../shared/templates/task.model';
   styleUrl: './history.component.css'
 })
 export class HistoryComponent {
-  
+  checklistService = inject(ChecklistService)
 
-  historyArray = signal<Task[]>([])
+  historyArray = signal(this.checklistService.history())
+
+
 
 }
