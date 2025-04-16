@@ -15,8 +15,20 @@ export class TaskCardComponent {
       return this.checklistService.dailyTasks;
     }
 
-    changeTaskStatus(status: string){
-      console.log(status)
+    changeTaskStatus(status: string, taskId:string){//use service
+      console.log(status);
+      console.log(taskId);
+
+      //find object in array
+      let objectToUpdate = this.checklistService.dailyTasks.find(t  => t.id === taskId);
+
+      console.log(objectToUpdate)
+
+      //.update
+
+
+      //do i need spread operater
+
     }
 
     deleteHandler(taskId:string){
