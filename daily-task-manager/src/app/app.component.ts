@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ChecklistComponent } from './checklist/checklist.component';
+import { HistoryComponent } from './history/history.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ChecklistComponent],
+  imports: [ChecklistComponent, HistoryComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
