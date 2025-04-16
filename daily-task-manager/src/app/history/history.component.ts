@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-history',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './history.component.css'
 })
 export class HistoryComponent {
+  historyArray = signal([])
 
 }
