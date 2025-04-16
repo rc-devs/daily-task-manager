@@ -10,8 +10,8 @@ import { ChecklistService } from '../../shared/services/checklist.service';
 export class AddTaskComponent {
   constructor(public checklistService: ChecklistService){  }
 
-  submitNewTask(newTask: string){
-    this.checklistService.addNewTask(newTask);
+  submitNewTask(newTask: string, newDescription: string){
+    this.checklistService.addNewTask(newTask, newDescription);
     }
 
 
