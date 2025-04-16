@@ -2,6 +2,7 @@
   @for (t of getDefaultChecklist(); track t.id){
     <div class="{{t.status}}" >
     <li>{{t.task}}</li>
+    <!-- @if to display description (t.description (not yet added)) -->
       <label for="tasks">Task Status: </label>
         <select #taskStatus name="taskStatus">
             <option #incomplete name="incomplete" value="incomplete">Incomplete</option>
