@@ -12,10 +12,9 @@ import { AddTaskComponent } from './add-task/add-task.component';
 export class ChecklistComponent  {
   constructor(public checklistService: ChecklistService){  }
 
-  getTaskStatus(){
+  getTaskForm(){
     return this.checklistService.addTaskForm
   }
-
 
   onSubmit(){
     this.checklistService.onSubmitHandler()
@@ -23,6 +22,10 @@ export class ChecklistComponent  {
 
   onAddNewTask(){
     this.checklistService.changeFormStatus();
+  }
+
+  filterTasks(){
+    
   }
 
 }

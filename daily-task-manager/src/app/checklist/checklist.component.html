@@ -1,9 +1,9 @@
 <form #form name="form" (submit)="onSubmit(); $event.preventDefault()">
   <app-task-card></app-task-card>
 
-@if (getTaskStatus()){
+@if (getTaskForm()){
   <app-add-task></app-add-task>
-} @else if (!getTaskStatus()){
+} @else if (!getTaskForm()){
   <button type="button" (click)="onAddNewTask()">Add New Task</button>
 }
   <hr>
