@@ -15,14 +15,18 @@ export class TaskCardComponent {
       return this.checklistService.dailyTasks;
     }
 
-    changeTaskStatus(status: string, taskId:string){//use service
+    changeTaskStatus(taskId: string, status:string){//use service
       console.log(status);
       console.log(taskId);
 
       //find object in array
-      let objectToUpdate = this.checklistService.dailyTasks.find(t  => t.id === taskId);
+      /* let objectToUpdate = this.checklistService.dailyTasks.find(t  => t.id === taskId);
 
-      console.log(objectToUpdate)
+      console.log(objectToUpdate) */
+
+      return this.checklistService.dailyTasks.map(t => t.id === taskId ? {... t, status} : t.status = status);
+
+      console.log(this.checklistService.dailyTasks)
 
       //.update
 
