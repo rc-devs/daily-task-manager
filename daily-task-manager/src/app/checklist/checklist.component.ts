@@ -13,6 +13,12 @@ import { FilterTasksComponent } from './filter-tasks/filter-tasks.component';
 export class ChecklistComponent  {
   constructor(public checklistService: ChecklistService){  }
 
+  get debugOutput() {
+    console.log("[ checklist component] generated");
+    return '';
+  }
+
+
 
   getTaskForm(){
     return this.checklistService.addTaskForm

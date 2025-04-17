@@ -10,6 +10,11 @@ import { ChecklistService } from '../../shared/services/checklist.service';
 export class AddTaskComponent {
   constructor(public checklistService: ChecklistService){  }
 
+  get debugOutput() {
+    console.log("[ add-task component] generated");
+    return '';
+  }
+
   submitNewTask(newTask: string, newDescription: string){
     this.checklistService.addNewTask(newTask, newDescription);
     }

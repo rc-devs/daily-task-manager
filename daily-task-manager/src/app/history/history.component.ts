@@ -12,6 +12,9 @@ export class HistoryComponent {
 
   historyArray = signal(this.checklistService.history())
 
-
+  get debugOutput() {
+    console.log("[ checklist component] generated");
+    return '';
+  }
 
 }
