@@ -1,5 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: rgb(9, 78, 73);
+}
+
+button {
+  background-color: rgb(249, 228, 93);
+  box-shadow: 0 0 12px  rgb(249, 228, 93);
+  margin: 5px;
+}
+
+button:hover {
+  background-color: rgb(249, 228, 93);
+  box-shadow: 0 0 20px  rgb(233, 207, 39);
+}
+
 .danger-btn {
   background-color: rgb(228, 146, 146);
-  margin: 5px;
+  box-shadow: 0 0 12px  red;
+  margin: 10px;
+}
+
+.update-btn {
+  margin-top: 10px;
+  border: solid 3px cyan;
+  background-color: rgb(120, 255, 255);
+  box-shadow: 0 0 12px  rgb(61, 243, 243);
+}
+
+
+.danger-btn:hover{
+  background-color: rgb(245, 88, 88);
+  box-shadow: 0 0 50px  rgb(196, 5, 5);
+}
+
+
+.update-btn:hover {
+  background-color: rgb(28, 245, 245);
+  box-shadow: 0 0 50px  rgb(33, 230, 230);
 }

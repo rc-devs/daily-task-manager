@@ -10,13 +10,13 @@
             <option #inProgress name="inProgress" value="in-progress">In Progress</option>
             <option #complete name="complete" value="complete">Complete</option>
         </select>
-        <button class="change-status" (click)="changeTaskStatus(t.id, taskStatus.value); $event.preventDefault()">Change Status</button>
+        <button class="update-btn" (click)="changeTaskStatus(t.id, taskStatus.value); $event.preventDefault()">Change Status</button>
         <button class="danger-btn" (click)="deleteHandler(t.id); $event.preventDefault()">Delete</button>
     </div>
   }
 
-
-<button type="submit" (submit)="onSubmit(); $event.preventDefault()">Submit</button>
+<!--
+<button type="submit" (submit)="onSubmit(); $event.preventDefault()">Submit</button> -->
 
 <p>{{debugOutput}}</p>
 
