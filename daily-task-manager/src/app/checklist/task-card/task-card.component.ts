@@ -10,6 +10,7 @@ import { ChecklistService } from '../../shared/services/checklist.service';
 })
 export class TaskCardComponent {
     constructor(private checklistService: ChecklistService){}
+    showDescription = signal(false)
 
     get debugOutput() {
       console.log("[ task-card component] generated");
@@ -31,6 +32,10 @@ export class TaskCardComponent {
       console.log(taskId)
       this.checklistService.dailyTasks = this.getDefaultChecklist().filter(t  => t.id !== taskId);
       console.log(this.checklistService.dailyTasks)
+    }
+
+    showDescriptionHandler(bool: boolean){
+      this.showDescription.set(bool);
     }
 
     onSubmit(){

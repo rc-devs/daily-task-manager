@@ -3,7 +3,13 @@
     <div class="{{t.status}}" >
     <h3>{{t.task}}</h3>
     <!-- @if to display description (t.description (not yet added)) -->
-     <p>{{t.description}}</p>
+     @if (showDescription()){
+      <p>{{t.description}}</p>
+      <button (click)="showDescriptionHandler(false)" type="button">Show description</button>
+     } @else if (!showDescription()) {
+      <button (click)="showDescriptionHandler(true)" type="button">Show description</button>
+     }
+
       <label for="tasks">Task Status: </label>
         <select #taskStatus name="taskStatus">
             <option #incomplete name="incomplete" value="incomplete">Incomplete</option>
