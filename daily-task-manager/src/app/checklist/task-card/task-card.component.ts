@@ -33,10 +33,10 @@ export class TaskCardComponent {
       this.checklistService.dailyTasks = this.getDefaultChecklist().filter(t  => t.id !== taskId);
       console.log(this.checklistService.dailyTasks)
     }
-
+/*
     showDescriptionHandler(bool: boolean){
       this.showDescription.set(bool);
-    }
+    } */
 
     onSubmit(){
       this.checklistService.onSubmitHandler(this.checklistService.dailyTasks)
