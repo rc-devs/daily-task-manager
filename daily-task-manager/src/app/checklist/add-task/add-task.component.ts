@@ -20,6 +20,10 @@ export class AddTaskComponent {
     this.checklistService.addNewTask(newTask, newDescription);
     }
 
+    cancelHandler(){
+      this.checklistService.taskFormStatus(false);
+    }
+
 
   }
 

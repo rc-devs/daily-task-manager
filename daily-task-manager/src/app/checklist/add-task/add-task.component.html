@@ -3,6 +3,7 @@
     <input #taskInput required type="text" name="taskInput" placeholder="Enter task name">
     <textarea #descriptionInput type="text" name="descriptionInput" placeholder="Enter description" rows="5" cols="30"></textarea>
   <button type="submit">Add Task</button>
+  <button class="danger-btn" type="button" (click)="cancelHandler()">Cancel</button>
 </form>
 
 <p>{{debugOutput}}</p>
