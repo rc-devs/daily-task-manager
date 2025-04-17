@@ -10,7 +10,7 @@ import { ChecklistService } from '../shared/services/checklist.service';
 export class HistoryComponent {
   checklistService = inject(ChecklistService)
 
-  historyArray = signal(this.checklistService.history())
+  historyArray = signal(this.checklistService.dailyTasks)
 
 
 
