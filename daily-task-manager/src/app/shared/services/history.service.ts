@@ -9,16 +9,18 @@ export class HistoryService {
   constructor() { }
   mainHistory  = signal<Historical[]>([])
 
-  //session storage getItem and parse to string for use
-  historyJSON = sessionStorage.getItem('historicalChecklist')
-  historyArray = signal(this.historyJSON ? JSON.parse(this.historyJSON): null); //google for ng help
+
 
 
   createNewHistory(){
 
+  //session storage getItem and parse to string for use
+    let historyJSON = sessionStorage.getItem('historicalChecklist')
+    let historyArray = signal(historyJSON ? JSON.parse(historyJSON): null); //google for ng help
+
     this.mainHistory().unshift(
       { date: Date.now(),
-        checklist: this.historyArray(),})
+        checklist: historyArray(),})
 
   }
 

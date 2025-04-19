@@ -153,9 +153,11 @@ export class ChecklistService {
 
   onSubmitHandler(taskList: Task[]) {
     if (window.confirm('Are you sure you would like to submit this form?')){
-      sessionStorage.setItem('historicalChecklist', JSON.stringify(taskList));
-      console.log(sessionStorage.getItem('historicalChecklist'))
-      this.historyService.createNewHistory(); //create new object in mainHistory array
+      sessionStorage.setItem('historicalChecklist', JSON.stringify(taskList)); //stringify taskList
+
+      console.log(sessionStorage.getItem('historicalChecklist')) //testlog
+
+      this.historyService.createNewHistory(); //create new object in mainHistory array via service
       this.dailyTasks = DEFAULT_DATA;
       alert('Awesome! Your completed checklist is in your history for this session.')
     } else {
