@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ChecklistComponent } from './checklist/checklist.component';
 import { HistoryComponent } from './history/history.component';
 
@@ -10,4 +10,11 @@ import { HistoryComponent } from './history/history.component';
 })
 export class AppComponent {
   title = 'daily-task-manager';
+
+  chooseDisplay = signal("")
+
+  handleChooseDisplay(choice: string){
+    this.chooseDisplay.set(choice);
+  }
+
 }

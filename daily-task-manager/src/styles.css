@@ -38,3 +38,7 @@ button:hover {
   background-color: rgb(28, 245, 245);
   box-shadow: 0 0 50px  rgb(33, 230, 230);
 }
+
+li {
+  list-style: none;
+}
