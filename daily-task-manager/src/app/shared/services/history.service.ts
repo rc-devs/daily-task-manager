@@ -14,11 +14,6 @@ export class HistoryService {
   historyArray = signal(this.historyJSON ? JSON.parse(this.historyJSON): null); //google for ng help
 
 
-
-  //recieve checklist data from add-tasks-component when click onSubmit (currently checklist-component)
-  //push as own object to array?
-
-
   createNewHistory(){
 
     this.mainHistory().unshift(
@@ -26,7 +21,5 @@ export class HistoryService {
         checklist: this.historyArray(),})
 
   }
-
-
 
 }
