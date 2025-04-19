@@ -1,10 +1,9 @@
 <p>history works!</p>
 
-@for (h of historyService.historyArray(); track h.id){
-  <p>{{h.task}}</p>
-  <p>{{h.description}}</p>
+@for (h of historyService.mainHistory(); track h){
+  <p>{{h}}</p>
 }
 
-<button (click)="test()">Test json</button>
+<!-- <button (click)="test()">Test json</button> -->
 
 <p>{{debugOutput}}</p>

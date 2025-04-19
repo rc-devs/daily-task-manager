@@ -1,11 +1,13 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 
 import { Task } from '../templates/task.model';
+import { HistoryService } from './history.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ChecklistService {
+  historyService = inject(HistoryService)
   constructor() {}
 
   dailyTasks: Task[] = [
@@ -111,6 +113,7 @@ export class ChecklistService {
    if (window.confirm('Are you sure you would like to submit this form?')){
     sessionStorage.setItem('historicalChecklist', JSON.stringify(taskList));
     console.log(sessionStorage.getItem('historicalChecklist'))
+    this.historyService.createNewHistory();
    } else {
     console.log('user declined to submit')
    }
