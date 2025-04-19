@@ -35,7 +35,7 @@ export class ChecklistService {
       description: 'Run em',
       showDescription: false,
     },
-    {
+ /*    {
       id: 't4',
       status: 'incomplete',
       task: 'Water Dogs/Cats',
@@ -91,7 +91,7 @@ export class ChecklistService {
       task: 'Evening Meds (Dawgs)',
       description: '1 Proin Maple, 1 Joint Supp Boogie',
       showDescription: false,
-    },
+    }, */
   ];
 ;
 
