@@ -3,14 +3,14 @@
     <div class="{{t.status}}" >
     <h3>{{t.task}}</h3>
 
-    <p>{{t.description}}</p>
+    <!-- <p>{{t.description}}</p> -->
 
-    <!--  @if (showDescription()){
+     @if (t.showDescription){
       <p>{{t.description}}</p>
-      <button (click)="showDescriptionHandler(false)" type="button">Show description</button>
-     } @else if (!showDescription()) {
-      <button (click)="showDescriptionHandler(true)" type="button">Show description</button>
-     } -->
+      <button (click)="showDescriptionHandler(t.id, false)" type="button">Show description</button>
+     } @else if (!t.showDescription) {
+      <button (click)="showDescriptionHandler(t.id, true)" type="button">Show description</button>
+     }
 
       <label for="tasks">Task Status: </label>
         <select #taskStatus name="taskStatus">

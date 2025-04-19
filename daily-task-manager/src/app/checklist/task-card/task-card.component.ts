@@ -10,7 +10,7 @@ import { ChecklistService } from '../../shared/services/checklist.service';
 })
 export class TaskCardComponent {
     constructor(private checklistService: ChecklistService){}
-    showDescription = signal(false)
+    
 
     get debugOutput() {
       console.log("[ task-card component] generated");
@@ -30,16 +30,20 @@ export class TaskCardComponent {
 
     deleteHandler(taskId:string){
       console.log(taskId)
-      this.checklistService.dailyTasks = this.getDefaultChecklist().filter(t  => t.id !== taskId);
+      this.checklistService.dailyTasks = this.getDefaultChecklist().filter(t  => t.id !== taskId); //return array of objects that DO NOT match the task id, set as new
       console.log(this.checklistService.dailyTasks)
     }
-/*
-    showDescriptionHandler(bool: boolean){
-      this.showDescription.set(bool);
-    } */
+
+    showDescriptionHandler(taskId: string, bool: boolean){
+
+      return this.checklistService.dailyTasks.map(t => t.id !== taskId ? {... t, bool} : t.showDescription = bool);
+
+    }
 
     onSubmit(){
       this.checklistService.onSubmitHandler(this.checklistService.dailyTasks)
+      //to session storage?
+      //reset dailyTasks?
     }
 
 
