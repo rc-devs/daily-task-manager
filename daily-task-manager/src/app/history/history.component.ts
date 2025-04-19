@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { ChecklistService } from '../shared/services/checklist.service';
+import { HistoryService } from '../shared/services/history.service';
 
 @Component({
   selector: 'app-history',
@@ -10,12 +11,17 @@ import { ChecklistService } from '../shared/services/checklist.service';
 })
 export class HistoryComponent {
   checklistService = inject(ChecklistService)
-
-  //historyArray = signal(this.checklistService.history())
+  historyService = inject(HistoryService)
 
   get debugOutput() {
     console.log("[ history component] generated");
     return '';
+  }
+
+  test(){
+    console.log('test runs');
+
+    console.log(this.historyService.historyArray)
   }
 
 }
