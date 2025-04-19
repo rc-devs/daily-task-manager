@@ -40,9 +40,7 @@ export class TaskCardComponent {
     }
 
     onSubmit(){
-      this.checklistService.onSubmitHandler(this.checklistService.dailyTasks)
-      //to session storage?
-      //reset dailyTasks?
+      this.checklistService.onSubmitHandler(this.checklistService.dailyTasks) //pass current array to submit handler in service
     }
 
 
