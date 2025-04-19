@@ -9,18 +9,17 @@ export class ChecklistService {
   constructor() { }
 
   dailyTasks: Task[]= ([
-    { id:"t1", status:'incomplete', task: "Make Bed", description: ''},
-    { id:"t2", status:'incomplete', task: "Dishwasher", description: ''},
-    { id:"t3", status:'incomplete', task: "Dogs Out", description: ''},
-    { id:"t4", status:'incomplete', task: "Water Dogs/Cats", description: ''},
-    { id:"t5", status:'incomplete', task: "Feed Dogs", description: ''},
-    { id:"t6", status:'incomplete', task: "Feed Cats", description: ''},
-    { id:"t7", status:'incomplete', task: "Litter", description: ''},
-    { id:"t8", status:'incomplete', task: "Empty Trash", description: ''},
-    { id:"t9", status:'incomplete', task: "Sweep", description: ''},
-    { id:"t10", status:'incomplete', task: "Morning Meds", description: ''},
-    { id:"t11", status:'incomplete', task: "Evening Meds", description: ''},
-    { id:"t12", status:'incomplete', task: "Brush Down Animals", description: ''}]);
+    { id:"t1", status:'incomplete', task: "Make Bed", description: 'Change sheets at least once a week'},
+    { id:"t2", status:'incomplete', task: "Dishwasher", description: 'Wash any dishes remaining in sink'},
+    { id:"t3", status:'incomplete', task: "Dogs Out", description: 'Run em'},
+    { id:"t4", status:'incomplete', task: "Water Dogs/Cats", description: 'Use clean bowls!'},
+    { id:"t5", status:'incomplete', task: "Feed Dogs", description: 'Two scoops'},
+    { id:"t6", status:'incomplete', task: "Feed Cats", description: 'One scoop'},
+    { id:"t7", status:'incomplete', task: "Litter", description: 'Nasty Cats'},
+    { id:"t8", status:'incomplete', task: "Empty Trash", description: "Don't forget smaller trashes!"},
+    { id:"t9", status:'incomplete', task: "Sweep", description: 'Sysiphus'},
+    { id:"t10", status:'incomplete', task: "Morning Meds (Dawgs)", description: '1 Proin Maple, 1 Joint Supp Boogie'},
+    { id:"t11", status:'incomplete', task: "Evening Meds (Dawgs)", description: '1 Proin Maple, 1 Joint Supp Boogie'},]);
 
   public addTaskForm = false;
   public history = signal<Task[]>([]);
