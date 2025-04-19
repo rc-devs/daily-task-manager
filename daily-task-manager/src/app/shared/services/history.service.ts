@@ -9,7 +9,7 @@ export class HistoryService {
   constructor() { }
 
   historyJSON = sessionStorage.getItem('historicalChecklist')
-  historyArray = this.historyJSON ? JSON.parse(this.historyJSON): null; //google
+  historyArray = signal(this.historyJSON ? JSON.parse(this.historyJSON): null); //google
 
   test(){
     console.log(this.historyArray)
