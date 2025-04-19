@@ -90,7 +90,7 @@ export class ChecklistService {
   ];
 
   public addTaskForm = false;
-  public history = signal<Task[]>([]);
+  //public history = signal<Task[]>([]);
 
   taskFormStatus(bool: boolean) {
     this.addTaskForm = bool;
@@ -110,15 +110,20 @@ export class ChecklistService {
 
   onSubmitHandler(taskList: Task[]) {
     window.confirm('Are you sure you would like to submit this form?');
-    console.log({ taskList });
+
+    sessionStorage.setItem('historicalChecklist', JSON.stringify(taskList));
+
+    
     console.log('submit connected');
     // take form information task name, task status (complete: bool), and add to historical array (use local storage?)
-    this.history.set(this.dailyTasks);
+    /* this.history.set(taskList);
     console.log(
       typeof this.history,
       typeof this.dailyTasks,
       typeof { taskList }
     );
+    console.log(this.history) */
+    console.log(sessionStorage.getItem('historicalChecklist'))
   }
 
   addNewTask(newTask: string, newDescription: string) {
