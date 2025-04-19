@@ -1,17 +1,14 @@
-<!-- @if (historyService.mainHistory() !== []){
-  <p>You have no historical data</p>
-} @else if (historyService.mainHistory() !== []){
-  @for (m of historyService.mainHistory(); track m.date){
-    <p>{{m.date | date: 'medium'}}</p>
-    <p>{{m.checklist}}</p>
-  }
 
-} -->
+
 @for (m of historyService.mainHistory(); track m.date){
-  <p>{{m.date | date: 'medium'}}</p>
-  <p>{{m.checklist}}</p>
+  <div class="history-card">
+    <p>{{m.date | date: 'medium'}}</p>
+    @for(c of m.checklist; track c.id){
+      <p>Task: {{c.task}} : {{c.status}}</p>
+    }
+  </div>
 }
 
-<!-- <button (click)="test()">Test json</button> -->
+
 
 <p>{{debugOutput}}</p>

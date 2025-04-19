@@ -1,0 +1,11 @@
+.history-card {
+  display: inline-block;
+  border-radius: 2em;
+  text-align: center;
+  margin: 15px;
+  padding: 10px;
+  content: center;
+  background-color: rgba(139, 137, 137, 0.37);
+  border: solid 3px rgb(14, 112, 49);
+  box-shadow: 0 0 12px  rgb(21, 236, 21);
+}
