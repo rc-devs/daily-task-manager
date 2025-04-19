@@ -1,5 +1,12 @@
+<!-- @if (historyService.mainHistory() !== []){
+  <p>You have no historical data</p>
+} @else if (historyService.mainHistory() !== []){
+  @for (m of historyService.mainHistory(); track m.date){
+    <p>{{m.date | date: 'medium'}}</p>
+    <p>{{m.checklist}}</p>
+  }
 
-
+} -->
 @for (m of historyService.mainHistory(); track m.date){
   <p>{{m.date | date: 'medium'}}</p>
   <p>{{m.checklist}}</p>
