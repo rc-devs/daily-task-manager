@@ -13,16 +13,15 @@ export class HistoryService {
   historyJSON = sessionStorage.getItem('historicalChecklist')
   historyArray = signal(this.historyJSON ? JSON.parse(this.historyJSON): null); //google for ng help
 
- /*  test(){
-    console.log(this.historyArray)
-  } */
+
 
   //recieve checklist data from add-tasks-component when click onSubmit (currently checklist-component)
   //push as own object to array?
 
 
   createNewHistory(){
-    this.mainHistory().push(this.historyArray())
+    this.mainHistory().unshift(this.historyArray())
+    
   }
 
 

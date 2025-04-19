@@ -18,10 +18,4 @@ export class HistoryComponent {
     return '';
   }
 
- /*  test(){
-    console.log('test runs');
-
-    console.log(this.historyService.historyArray)
-  } */
-
 }
