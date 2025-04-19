@@ -1,4 +1,4 @@
-export interface History {
-  date: Date,
+export interface Historical {
+  date: number,
   checklist: [],
 }

@@ -1,7 +1,8 @@
 
 
-@for (h of historyService.mainHistory(); track h){
-  <p>{{h}}</p>
+@for (m of historyService.mainHistory(); track m.date){
+  <p>{{m.date | date: 'medium'}}</p>
+  <p>{{m.checklist}}</p>
 }
 
 <!-- <button (click)="test()">Test json</button> -->
