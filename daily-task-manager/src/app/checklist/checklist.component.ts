@@ -2,10 +2,11 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { TaskCardComponent } from './task-card/task-card.component';
 import { ChecklistService } from '../shared/services/checklist.service';
 import { AddTaskComponent } from './add-task/add-task.component';
+import { SharedModule } from '../shared/modules/sharedmodule';
 
 @Component({
   selector: 'app-checklist',
-  imports: [TaskCardComponent, AddTaskComponent],
+  imports: [/* TaskCardComponent, AddTaskComponent */ SharedModule],
   templateUrl: './checklist.component.html',
   styleUrl: './checklist.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
