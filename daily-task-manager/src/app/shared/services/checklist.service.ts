@@ -39,8 +39,9 @@ export class ChecklistService {
 
 //functions
   resetDailyTasks(){
-   this.dailyTasks = DEFAULT_DATA
-   console.log('reset daily tasks' + this.dailyTasks)
+   this.dailyTasks = [...DEFAULT_DATA]
+   console.log('reset daily tasks')
+   console.log(this.dailyTasks)
   }
 
 
@@ -51,6 +52,7 @@ export class ChecklistService {
 
 //create new object and add to array in service
   addNewTask(newTask: string, newDescription: string) {
+    console.log(this.dailyTasks)
   //get random number for use in new object id
     let randomNumber = Math.floor(Math.random() * 100).toString();
 
