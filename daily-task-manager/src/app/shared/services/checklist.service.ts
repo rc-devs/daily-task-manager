@@ -8,17 +8,13 @@ import DEFAULT_DATA from '../data/default-checklist.data'
 })
 export class ChecklistService {
   historyService = inject(HistoryService);
- constructor() {
-  //sessionStorage.setItem('defaultData', JSON.stringify([...DEFAULT_DATA]))
- }
+ constructor() {}
 
 
 
   public addTaskForm = false;
 
 //data
-
-
    dailyTasks = <Task[]>([
     {
       id: 't1',
@@ -104,14 +100,12 @@ export class ChecklistService {
 
       this.historyService.createNewHistory(); //create new object in mainHistory array via service
 
-       //this.dailyTasks = [...DEFAULT_DATA]
       this.resetDailyTasks()
-
 
       console.log(sessionStorage.getItem('historicalChecklist')) //testlog
       console.log(this.dailyTasks) //testlog
-  
-      return this.dailyTasks.map(t => t.id !== t.id ? {...t, defaultStatus} : t.status = defaultStatus);
+
+      return this.dailyTasks.map(t => t.id !== t.id ? {...t, defaultStatus} : t.status = defaultStatus); //reset all statuses to 'incomplete'
 
     } else {
       console.log('user declined to submit')

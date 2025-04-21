@@ -3,8 +3,6 @@
     <div class="{{t.status}}" >
     <h3>{{t.task}}</h3>
 
-    <!-- <p>{{t.description}}</p> -->
-
      @if (t.showDescription){
       <p>{{t.description}}</p>
       <button (click)="showDescriptionHandler(t.id, false)" type="button">Show description</button>
