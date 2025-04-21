@@ -23,7 +23,7 @@ export class ChecklistComponent  {
   }
 
   onAddNewTask(){
-    this.checklistService.changeFormStatus();
+    this.checklistService.showAddTaskForm(true);
   }
 
   onSubmit(){

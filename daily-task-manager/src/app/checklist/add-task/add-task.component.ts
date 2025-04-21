@@ -21,7 +21,7 @@ export class AddTaskComponent {
     }
 
     cancelHandler(){
-      this.checklistService.taskFormStatus(false);
+      this.checklistService.showAddTaskForm(false);
     }
 
 

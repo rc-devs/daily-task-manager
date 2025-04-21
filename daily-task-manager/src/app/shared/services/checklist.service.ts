@@ -10,8 +10,6 @@ export class ChecklistService {
   historyService = inject(HistoryService);
  constructor() {}
 
-
-
   public addTaskForm = false;
 
 //data
@@ -46,19 +44,8 @@ export class ChecklistService {
   }
 
 //functions
-  taskFormStatus(bool: boolean) {
+  showAddTaskForm(bool: boolean) {
     this.addTaskForm = bool;
-    return this.addTaskForm;
-  }
-
-  changeFormStatus() {
-    console.log(this.addTaskForm);
-    if (!this.addTaskForm) {
-      this.addTaskForm = true;
-    } else if (this.addTaskForm) {
-      this.addTaskForm = true;
-    }
-    console.log(this.addTaskForm);
     return this.addTaskForm;
   }
 
@@ -89,7 +76,7 @@ export class ChecklistService {
         showDescription: false,
       });
       //set form status to remove component with form once submitted
-      this.taskFormStatus(false);
+      this.showAddTaskForm(false);
       console.log(this.dailyTasks); //log new array
     }
   }
@@ -105,6 +92,7 @@ export class ChecklistService {
 
       console.log(sessionStorage.getItem('historicalChecklist')) //testlog
       console.log(this.dailyTasks) //testlog
+
 
       return this.dailyTasks.map(t => t.id !== t.id ? {...t, defaultStatus} : t.status = defaultStatus); //reset all statuses to 'incomplete'
     } else {
