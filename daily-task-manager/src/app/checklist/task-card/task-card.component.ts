@@ -25,7 +25,8 @@ export class TaskCardComponent {
       console.log(newStatus);
       console.log(taskId);
 
-      return this.checklistService.dailyTasks.map(t => t.id !== taskId ? {... t, newStatus} : t.status = newStatus); //set new status
+      return this.checklistService.dailyTasks.map(t => t.id !== taskId ? {... t, newStatus} : t.status = newStatus); //set new status in array
+
     }
 
     deleteHandler(taskId:string){
@@ -38,16 +39,5 @@ export class TaskCardComponent {
       return this.checklistService.dailyTasks.map(t => t.id !== taskId ? {... t, bool} : t.showDescription = bool);
 
     }
-
-    onSubmit(){
-      this.checklistService.onSubmitHandler(this.checklistService.dailyTasks) //pass current array to submit handler in service
-    }
-
-
-
-
-
-
-
 
 }
