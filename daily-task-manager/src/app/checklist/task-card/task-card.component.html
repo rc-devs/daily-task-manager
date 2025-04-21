@@ -10,9 +10,10 @@
       <button (click)="showDescriptionHandler(t.id, true)" type="button">Show description</button>
      }
 
+     <!-- could be own component -->
       <label for="tasks">Task Status: </label>
         <select #taskStatus name="taskStatus">
-            <option #incomplete name="incomplete" value="incomplete">Incomplete</option>
+            <option selected #incomplete name="incomplete" value="incomplete" >Incomplete</option>
             <option #inProgress name="inProgress" value="in-progress">In Progress</option>
             <option #complete name="complete" value="complete">Complete</option>
         </select>
