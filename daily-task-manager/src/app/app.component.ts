@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
-import { ChecklistComponent } from './checklist/checklist.component';
-import { HistoryComponent } from './history/history.component';
+import { Component, OnDestroy } from '@angular/core';
+import { MenuComponent } from './menu/menu.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ChecklistComponent, HistoryComponent],
+  imports: [ MenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy{
   title = 'daily-task-manager';
+
+  ngOnDestroy(): void {
+    sessionStorage.clear()
+  }
 }

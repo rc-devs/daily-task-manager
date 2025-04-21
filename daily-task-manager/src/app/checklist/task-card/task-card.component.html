@@ -1,21 +1,30 @@
 
   @for (t of getDefaultChecklist(); track t.id){
     <div class="{{t.status}}" >
-    <li>{{t.task}}</li>
-    <!-- @if to display description (t.description (not yet added)) -->
+    <h3>{{t.task}}</h3>
+
+     @if (t.showDescription){
+      <p>{{t.description}}</p>
+      <button (click)="showDescriptionHandler(t.id, false)" type="button">Show description</button>
+     } @else if (!t.showDescription) {
+      <button (click)="showDescriptionHandler(t.id, true)" type="button">Show description</button>
+     }
+
+     <!-- could be own component -->
       <label for="tasks">Task Status: </label>
         <select #taskStatus name="taskStatus">
-            <option #incomplete name="incomplete" value="incomplete">Incomplete</option>
+            <option selected #incomplete name="incomplete" value="incomplete" >Incomplete</option>
             <option #inProgress name="inProgress" value="in-progress">In Progress</option>
             <option #complete name="complete" value="complete">Complete</option>
         </select>
-        <button class="change-status" (click)="changeTaskStatus(t.id, taskStatus.value); $event.preventDefault()">Change Status</button>
+        <button class="update-btn" (click)="changeTaskStatus(t.id, taskStatus.value); $event.preventDefault()">Change Status</button>
         <button class="danger-btn" (click)="deleteHandler(t.id); $event.preventDefault()">Delete</button>
     </div>
   }
 
 
-<!-- <button type="submit" (submit)="onSubmit(); $event.preventDefault()">Submit</button> -->
+
+<p>{{debugOutput}}</p>
 
 
 

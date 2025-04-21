@@ -1,0 +1,13 @@
+
+<menu>
+  <li><button (click)="handleChooseDisplay('checklist')">New Checklist</button></li>
+  <li><button (click)="handleChooseDisplay('history')">Review History</button></li>
+</menu>
+
+@if (chooseDisplay() === 'checklist'){
+  <app-checklist></app-checklist>
+} @else if (chooseDisplay() === 'history'){
+  <app-history></app-history>
+} @else {
+  <p>Choose to display checklist or history!</p>
+}

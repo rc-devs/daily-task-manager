@@ -1,10 +1,23 @@
 form {
-  border: 2px solid green;
-  width: 50%;
+  border: 2px solid rgb(167, 215, 184);
+  box-shadow: 0 0 15px rgb(167, 215, 184);
+  width: fit-content;
   padding: 10px;
+  display: block;
+
+}
+
+input {
+  background-color: rgb(75, 199, 216);
+}
+
+textarea {
+  display: block;
+  margin: 5px;
+  background-color: rgb(75, 199, 216);
 }
 
 button {
-  display: block;
-  margin-top: 10px;
+  display: inline-block;
 }
+
