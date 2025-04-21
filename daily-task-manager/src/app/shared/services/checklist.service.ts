@@ -96,6 +96,7 @@ export class ChecklistService {
 
   onSubmitHandler(taskList: Task[], defaultStatus:string) {
     if (window.confirm('Are you sure you would like to submit this form?')){
+      console.log(taskList)
       sessionStorage.setItem('historicalChecklist', JSON.stringify(taskList)); //stringify taskList (most recent form submit) and set as historicalChecklist
 
       this.historyService.createNewHistory(); //create new object in mainHistory array via service
