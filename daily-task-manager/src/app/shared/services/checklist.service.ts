@@ -37,37 +37,34 @@ export class ChecklistService {
     },
   ]);
 
-
+//functions
   resetDailyTasks(){
    this.dailyTasks = DEFAULT_DATA
    console.log('reset daily tasks' + this.dailyTasks)
   }
 
-//functions
+
   showAddTaskForm(bool: boolean) {
-    this.addTaskForm = bool;
+    this.addTaskForm = bool; //set public bool to false (affects html)
     return this.addTaskForm;
   }
 
+//create new object and add to array in service
   addNewTask(newTask: string, newDescription: string) {
-    //create new object and add to array in service
-    console.log('addNewTask runs'); //test log
-
-    //get random number for use in new object id
+  //get random number for use in new object id
     let randomNumber = Math.floor(Math.random() * 100).toString();
 
-    //check if any dailyTask.id are == random number
-    let checkDuplicate = this.dailyTasks.find(
-      (t) => t.id === 't' + randomNumber
-    );
+  //check if any dailyTask.id are == random number
+    let checkDuplicate = this.dailyTasks.find((t) => t.id === 't' + randomNumber);
 
-    //if else for adding task
-    if (checkDuplicate?.id == 't' + randomNumber) {
-      //check for duplicate (match)
-      console.log('duplicate'); //test log
+  //if else for adding task
+    if (checkDuplicate?.id == 't' + randomNumber) {//check for duplicate (if yes)
+    //check for duplicate (if match it duplicate)
+      console.log('duplicate id found'); //test log
       this.addNewTask(newTask, newDescription); //if duplicate found, rerun function
-    } else if (checkDuplicate?.id != 't' + randomNumber) {//check for duplicate
-      //add new task to array
+    } else if (checkDuplicate?.id != 't' + randomNumber) {//check for duplicate (if no)
+    //add new task to array
+      console.log('no duplicate id found')
       this.dailyTasks.unshift({
         id: 't' + randomNumber,
         status: 'incomplete',
@@ -83,16 +80,12 @@ export class ChecklistService {
 
   onSubmitHandler(taskList: Task[], defaultStatus:string) {
     if (window.confirm('Are you sure you would like to submit this form?')){
-      console.log(taskList)
+
       sessionStorage.setItem('historicalChecklist', JSON.stringify(taskList)); //stringify taskList (most recent form submit) and set as historicalChecklist
 
       this.historyService.createNewHistory(); //create new object in mainHistory array via service
 
       this.resetDailyTasks()
-
-      console.log(sessionStorage.getItem('historicalChecklist')) //testlog
-      console.log(this.dailyTasks) //testlog
-
 
       return this.dailyTasks.map(t => t.id !== t.id ? {...t, defaultStatus} : t.status = defaultStatus); //reset all statuses to 'incomplete'
     } else {
