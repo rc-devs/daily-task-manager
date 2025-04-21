@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { MenuComponent } from './menu/menu.component';
 
 @Component({
@@ -7,7 +7,10 @@ import { MenuComponent } from './menu/menu.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy{
   title = 'daily-task-manager';
 
+  ngOnDestroy(): void {
+    sessionStorage.clear()
+  }
 }
