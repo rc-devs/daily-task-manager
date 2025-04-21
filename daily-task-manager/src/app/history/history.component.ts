@@ -14,9 +14,14 @@ export class HistoryComponent {
   checklistService = inject(ChecklistService)
   historyService = inject(HistoryService)
 
+
   get debugOutput() {
     console.log("[ history component] generated");
     return '';
   }
+
+  historyArray = signal(this.checklistService.dailyTasks)
+
+
 
 }
