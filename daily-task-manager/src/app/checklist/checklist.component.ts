@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { TaskCardComponent } from './task-card/task-card.component';
 import { ChecklistService } from '../shared/services/checklist.service';
 import { AddTaskComponent } from './add-task/add-task.component';
-import { FilterTasksComponent } from './filter-tasks/filter-tasks.component';
 
 @Component({
   selector: 'app-checklist',
@@ -19,19 +18,16 @@ export class ChecklistComponent  {
     return '';
   }
 
-
-
-  getTaskForm(){
+  getAddTaskForm(){
     return this.checklistService.addTaskForm
-  }
-
-  onSubmit(){
-    this.checklistService.onSubmitHandler(this.checklistService.dailyTasks)
   }
 
   onAddNewTask(){
     this.checklistService.changeFormStatus();
   }
 
+  onSubmit(){
+    this.checklistService.onSubmitHandler(this.checklistService.dailyTasks)
+  }
 
 }
