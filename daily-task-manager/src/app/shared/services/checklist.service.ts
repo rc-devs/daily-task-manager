@@ -98,17 +98,20 @@ export class ChecklistService {
     }
   }
 
-  onSubmitHandler(taskList: Task[]) {
+  onSubmitHandler(taskList: Task[], defaultStatus:string) {
     if (window.confirm('Are you sure you would like to submit this form?')){
       sessionStorage.setItem('historicalChecklist', JSON.stringify(taskList)); //stringify taskList (most recent form submit) and set as historicalChecklist
 
-      //this.dailyTasks = [...DEFAULT_DATA]
-      this.resetDailyTasks()
       this.historyService.createNewHistory(); //create new object in mainHistory array via service
+
+       //this.dailyTasks = [...DEFAULT_DATA]
+      this.resetDailyTasks()
+
 
       console.log(sessionStorage.getItem('historicalChecklist')) //testlog
       console.log(this.dailyTasks) //testlog
-      console.log(DEFAULT_DATA) //testlog
+  
+      return this.dailyTasks.map(t => t.id !== t.id ? {...t, defaultStatus} : t.status = defaultStatus);
 
     } else {
       console.log('user declined to submit')
