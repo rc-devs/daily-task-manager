@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal, } from '@angular/core';
 
 import { Task } from '../templates/task.model';
 import { HistoryService } from './history.service';
@@ -7,13 +7,19 @@ import DEFAULT_DATA from '../data/default-checklist.data'
   providedIn: 'root',
 })
 export class ChecklistService {
-  historyService = inject(HistoryService)
-  constructor() {}
+  historyService = inject(HistoryService);
+ constructor() {
+  //sessionStorage.setItem('defaultData', JSON.stringify([...DEFAULT_DATA]))
+ }
+
+
 
   public addTaskForm = false;
 
 //data
-  dailyTasks = [
+
+
+   dailyTasks = <Task[]>([
     {
       id: 't1',
       status: 'incomplete',
@@ -35,65 +41,13 @@ export class ChecklistService {
       description: 'Run em',
       showDescription: false,
     },
- /*    {
-      id: 't4',
-      status: 'incomplete',
-      task: 'Water Dogs/Cats',
-      description: 'Use clean bowls!',
-      showDescription: false,
-    },
-    {
-      id: 't5',
-      status: 'incomplete',
-      task: 'Feed Dogs',
-      description: 'Two scoops',
-      showDescription: false,
-    },
-    {
-      id: 't6',
-      status: 'incomplete',
-      task: 'Feed Cats',
-      description: 'One scoop',
-      showDescription: false,
-    },
-    {
-      id: 't7',
-      status: 'incomplete',
-      task: 'Litter',
-      description: 'Nasty Cats',
-      showDescription: false,
-    },
-    {
-      id: 't8',
-      status: 'incomplete',
-      task: 'Empty Trash',
-      description: "Don't forget smaller trashes!",
-      showDescription: false,
-    },
-    {
-      id: 't9',
-      status: 'incomplete',
-      task: 'Sweep',
-      description: 'Sysiphus',
-      showDescription: false,
-    },
+  ]);
 
-    {
-      id: 't10',
-      status: 'incomplete',
-      task: 'Morning Meds (Dawgs)',
-      description: '1 Proin Maple, 1 Joint Supp Boogie',
-      showDescription: false,
-    },
-    {
-      id: 't11',
-      status: 'incomplete',
-      task: 'Evening Meds (Dawgs)',
-      description: '1 Proin Maple, 1 Joint Supp Boogie',
-      showDescription: false,
-    }, */
-  ];
-;
+
+  resetDailyTasks(){
+   this.dailyTasks = DEFAULT_DATA
+   console.log('reset daily tasks' + this.dailyTasks)
+  }
 
 //functions
   taskFormStatus(bool: boolean) {
@@ -129,8 +83,7 @@ export class ChecklistService {
       //check for duplicate (match)
       console.log('duplicate'); //test log
       this.addNewTask(newTask, newDescription); //if duplicate found, rerun function
-    } else if (checkDuplicate?.id != 't' + randomNumber) {
-      //check for duplicate
+    } else if (checkDuplicate?.id != 't' + randomNumber) {//check for duplicate
       //add new task to array
       this.dailyTasks.unshift({
         id: 't' + randomNumber,
@@ -144,24 +97,22 @@ export class ChecklistService {
       console.log(this.dailyTasks); //log new array
     }
   }
-  /*
-  filterTasksByStatus(){
-    if(this.dailyTasks){
-
-    }
-  } */
 
   onSubmitHandler(taskList: Task[]) {
     if (window.confirm('Are you sure you would like to submit this form?')){
-      sessionStorage.setItem('historicalChecklist', JSON.stringify(taskList)); //stringify taskList
+      sessionStorage.setItem('historicalChecklist', JSON.stringify(taskList)); //stringify taskList (most recent form submit) and set as historicalChecklist
+
+      //this.dailyTasks = [...DEFAULT_DATA]
+      this.resetDailyTasks()
+      this.historyService.createNewHistory(); //create new object in mainHistory array via service
 
       console.log(sessionStorage.getItem('historicalChecklist')) //testlog
+      console.log(this.dailyTasks) //testlog
+      console.log(DEFAULT_DATA) //testlog
 
-      this.historyService.createNewHistory(); //create new object in mainHistory array via service
-      this.dailyTasks = DEFAULT_DATA;
-      alert('Awesome! Your completed checklist is in your history for this session.')
     } else {
       console.log('user declined to submit')
+      return
     }
     }
 }
