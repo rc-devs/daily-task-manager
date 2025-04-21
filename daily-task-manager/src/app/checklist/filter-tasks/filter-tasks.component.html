@@ -1,9 +1,0 @@
-<select #filter name="filter">
-  <option #all name="all" value="all">All</option>
-  <option #incomplete name="incomplete" value="incomplete">Incomplete</option>
-  <option #inProgress name="inProgress" value="in-progress">In Progress</option>
-  <option #complete name="complete" value="complete">Complete</option>
-</select>
-<button type="button" (click)="filterTasks(filter.value)">Filter tasks</button>
-
-<p>{{debugOutput}}</p>

@@ -107,7 +107,6 @@ export class ChecklistService {
       console.log(this.dailyTasks) //testlog
 
       return this.dailyTasks.map(t => t.id !== t.id ? {...t, defaultStatus} : t.status = defaultStatus); //reset all statuses to 'incomplete'
-
     } else {
       console.log('user declined to submit')
       return

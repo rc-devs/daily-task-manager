@@ -5,7 +5,7 @@ import { AddTaskComponent } from './add-task/add-task.component';
 
 @Component({
   selector: 'app-checklist',
-  imports: [TaskCardComponent, AddTaskComponent, /* FilterTasksComponent */],
+  imports: [TaskCardComponent, AddTaskComponent],
   templateUrl: './checklist.component.html',
   styleUrl: './checklist.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

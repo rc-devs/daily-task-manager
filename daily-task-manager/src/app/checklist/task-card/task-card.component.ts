@@ -11,7 +11,6 @@ import { ChecklistService } from '../../shared/services/checklist.service';
 export class TaskCardComponent {
     constructor(private checklistService: ChecklistService){}
 
-
     get debugOutput() { //checking # times rendered
       console.log("[ task-card component] generated");
       return '';
