@@ -59,8 +59,27 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
 
-## Development Notes (Non-Angular)
+# Project Overview, Notes, CRUD Functionality (rc-devs)
 
-Using the development tools has been extremely helpful with this project. It can be difficult at times to intuitively identify where elements of the code are displaying when multiple components are being rendered. 
+## Project Overview
 
-In addition to our class, rewatching video lectures and reading through the angular documentation (https://angular.dev) has been crucial for this to be anywhere near functional 🫡. 
+This daily task manager was not my original plan for my personal project in this course. It started out as a way to practice using services and templates, concepts I had been struggling with, but in that practice it become semi-functional so I ran with it!
+
+The manager is simple; a single user is given a default array of daily tasks that they can read, and from there they can add new tasks or delete tasks as they choose. They can also update the 'status' of the tasks, and the card on which the task is displayed changes to a corresponding color. 
+
+While the app is not super streamlined and pleasing to the eye, it is basically functional. I have actually been using it as part of my morning routine, part testing and (surprisingly!) part convenience. 
+
+I plan on adding other features to this app, and am currently working on these in the dev branch.
+
+## Project Development Notes (Non-Angular; rc-devs)
+
+Using the development tools has been extremely helpful with this project. It can be difficult at times to intuitively identify where elements of the code are displaying when multiple components are being rendered, but the dev tools help to solve that issue. 
+
+In addition to our class, rewatching video lectures from Max at Academind (https://github.com/mschwarzmueller) and reading through the angular documentation (https://angular.dev) has been crucial for this to be anywhere near functional 🫡. 
+
+## CRUD Functionality (Non-Angular; rc-devs)
+
+C - Add New Task; input task name and description
+R - Read the default array and newly created tasks in the browser
+U - Change Status; select new status from drop-down and click change status
+D - Delete; delete any default or added task
