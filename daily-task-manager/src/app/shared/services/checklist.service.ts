@@ -35,6 +35,63 @@ export class ChecklistService {
       description: 'Run em',
       showDescription: false,
     },
+    {
+      id: 't4',
+      status: 'incomplete',
+      task: 'Water Dogs/Cats',
+      description: 'Use clean bowls!',
+      showDescription: false,
+    },
+    {
+      id: 't5',
+      status: 'incomplete',
+      task: 'Feed Dogs',
+      description: 'Two scoops',
+      showDescription: false,
+    },
+    {
+      id: 't6',
+      status: 'incomplete',
+      task: 'Feed Cats',
+      description: 'One scoop',
+      showDescription: false,
+    },
+    {
+      id: 't7',
+      status: 'incomplete',
+      task: 'Litter',
+      description: 'Nasty Cats',
+      showDescription: false,
+    },
+    {
+      id: 't8',
+      status: 'incomplete',
+      task: 'Empty Trash',
+      description: "Don't forget smaller trashes!",
+      showDescription: false,
+    },
+    {
+      id: 't9',
+      status: 'incomplete',
+      task: 'Sweep',
+      description: 'Sysiphus',
+      showDescription: false,
+    },
+
+    {
+      id: 't10',
+      status: 'incomplete',
+      task: 'Morning Meds (Dawgs)',
+      description: '1 Proin Maple, 1 Joint Supp Boogie',
+      showDescription: false,
+    },
+    {
+      id: 't11',
+      status: 'incomplete',
+      task: 'Evening Meds (Dawgs)',
+      description: '1 Proin Maple, 1 Joint Supp Boogie',
+      showDescription: false,
+    },
   ]);
 
 //functions
@@ -83,7 +140,7 @@ export class ChecklistService {
   onSubmitHandler(taskList: Task[], defaultStatus:string) {
     if (window.confirm('Are you sure you would like to submit this form?')){
 
-      sessionStorage.setItem('historicalChecklist', JSON.stringify(taskList)); //stringify taskList (most recent form submit) and set as historicalChecklist
+      localStorage.setItem('historicalChecklist', JSON.stringify(taskList)); //stringify taskList (most recent form submit) and set as historicalChecklist
 
       this.historyService.createNewHistory(); //create new object in mainHistory array via service
 
