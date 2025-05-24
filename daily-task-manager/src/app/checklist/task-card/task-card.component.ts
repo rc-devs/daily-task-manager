@@ -17,26 +17,26 @@ export class TaskCardComponent {
     }
 
     getDefaultChecklist(){ //get default checklist for daily use
-      return this.checklistService.dailyTasks;
+      return this.checklistService.dailyTasks();
     }
 
     changeTaskStatus(taskId: string, newStatus:string){ //update task status
       console.log(newStatus);
       console.log(taskId);
 
-      return this.checklistService.dailyTasks.map(t => t.id !== taskId ? {... t, newStatus} : t.status = newStatus); //set new status in array
+      return this.checklistService.dailyTasks().map(t => t.id !== taskId ? {... t, newStatus} : t.status = newStatus); //set new status in array
 
     }
 
     deleteHandler(taskId:string){
       console.log(taskId)
-      this.checklistService.dailyTasks = this.getDefaultChecklist().filter(t  => t.id !== taskId); //return array of objects that DO NOT match the task id, set as new
+      this.checklistService.dailyTasks.set(this.getDefaultChecklist().filter(t  => t.id !== taskId)); //return array of objects that DO NOT match the task id, set as new)
       console.log(this.checklistService.dailyTasks) //test log confirm
     }
 
 
     showDescriptionHandler(taskId: string, bool: boolean){ //wonky or OOP; set bool inside of object itself
-      return this.checklistService.dailyTasks.map(t => t.id !== taskId ? {... t, bool} : t.showDescription = bool);
+      return this.checklistService.dailyTasks().map(t => t.id !== taskId ? {... t, bool} : t.showDescription = bool);
 
 
 

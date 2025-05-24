@@ -28,7 +28,7 @@ export class ChecklistComponent  {
   }
 
   onSubmit(){
-    this.checklistService.onSubmitHandler(this.checklistService.dailyTasks, 'incomplete')
+    this.checklistService.onSubmitHandler(this.checklistService.dailyTasks(), 'incomplete')
   }
 
 }

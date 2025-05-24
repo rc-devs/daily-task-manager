@@ -13,90 +13,11 @@ export class ChecklistService {
   public addTaskForm = false;
 
 //data
-   dailyTasks = <Task[]>([
-    {
-      id: 't1',
-      status: 'incomplete',
-      task: 'Make Bed',
-      description: 'Change sheets at least once a week',
-      showDescription: false,
-    },
-    {
-      id: 't2',
-      status: 'incomplete',
-      task: 'Dishwasher',
-      description: 'Wash any dishes remaining in sink',
-      showDescription: false,
-    },
-    {
-      id: 't3',
-      status: 'incomplete',
-      task: 'Dogs Out',
-      description: 'Run em',
-      showDescription: false,
-    },
-    {
-      id: 't4',
-      status: 'incomplete',
-      task: 'Water Dogs/Cats',
-      description: 'Use clean bowls!',
-      showDescription: false,
-    },
-    {
-      id: 't5',
-      status: 'incomplete',
-      task: 'Feed Dogs',
-      description: 'Two scoops',
-      showDescription: false,
-    },
-    {
-      id: 't6',
-      status: 'incomplete',
-      task: 'Feed Cats',
-      description: 'One scoop',
-      showDescription: false,
-    },
-    {
-      id: 't7',
-      status: 'incomplete',
-      task: 'Litter',
-      description: 'Nasty Cats',
-      showDescription: false,
-    },
-    {
-      id: 't8',
-      status: 'incomplete',
-      task: 'Empty Trash',
-      description: "Don't forget smaller trashes!",
-      showDescription: false,
-    },
-    {
-      id: 't9',
-      status: 'incomplete',
-      task: 'Sweep',
-      description: 'Sysiphus',
-      showDescription: false,
-    },
-
-    {
-      id: 't10',
-      status: 'incomplete',
-      task: 'Morning Meds (Dawgs)',
-      description: '1 Proin Maple, 1 Joint Supp Boogie',
-      showDescription: false,
-    },
-    {
-      id: 't11',
-      status: 'incomplete',
-      task: 'Evening Meds (Dawgs)',
-      description: '1 Proin Maple, 1 Joint Supp Boogie',
-      showDescription: false,
-    },
-  ]);
+   dailyTasks = signal<Task[]>(DEFAULT_DATA);
 
 //functions
   resetDailyTasks(){
-   this.dailyTasks = [...DEFAULT_DATA]
+   this.dailyTasks.set([...DEFAULT_DATA]);
    console.log('reset daily tasks')
    console.log(this.dailyTasks)
   }
@@ -114,7 +35,7 @@ export class ChecklistService {
     let randomNumber = Math.floor(Math.random() * 100).toString();
 
   //check if any dailyTask.id are == random number
-    let checkDuplicate = this.dailyTasks.find((t) => t.id === 't' + randomNumber);
+    let checkDuplicate = this.dailyTasks().find((t) => t.id === 't' + randomNumber);
 
   //if else for adding task
     if (checkDuplicate?.id == 't' + randomNumber) {//check for duplicate (if yes)
@@ -124,7 +45,7 @@ export class ChecklistService {
     } else if (checkDuplicate?.id != 't' + randomNumber) {//check for duplicate (if no)
     //add new task to array
       console.log('no duplicate id found')
-      this.dailyTasks.unshift({
+      this.dailyTasks().unshift({
         id: 't' + randomNumber,
         status: 'incomplete',
         task: newTask,
@@ -146,7 +67,7 @@ export class ChecklistService {
 
       this.resetDailyTasks()
 
-      return this.dailyTasks.map(t => t.id !== t.id ? {...t, defaultStatus} : t.status = defaultStatus); //reset all statuses to 'incomplete'
+      return this.dailyTasks().map(t => t.id !== t.id ? {...t, defaultStatus} : t.status = defaultStatus); //reset all statuses to 'incomplete'
     } else {
       console.log('user declined to submit')
       return
