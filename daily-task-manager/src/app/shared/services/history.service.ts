@@ -9,9 +9,6 @@ export class HistoryService {
   constructor() { }
   mainHistory  = signal<Historical[]>([])
 
-
-
-
   createNewHistory(){
 
   //session storage getItem and parse to string for use
