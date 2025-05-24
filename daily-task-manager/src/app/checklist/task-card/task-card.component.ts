@@ -34,8 +34,11 @@ export class TaskCardComponent {
       console.log(this.checklistService.dailyTasks) //test log confirm
     }
 
+
     showDescriptionHandler(taskId: string, bool: boolean){ //wonky or OOP; set bool inside of object itself
       return this.checklistService.dailyTasks.map(t => t.id !== taskId ? {... t, bool} : t.showDescription = bool);
+
+
 
     }
 
