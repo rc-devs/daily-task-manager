@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ChecklistService } from '../../shared/services/checklist.service';
+import { ChecklistService } from '../../../shared/services/checklist.service';
 
 @Component({
   selector: 'app-task-card',

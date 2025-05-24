@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ChecklistService } from '../../shared/services/checklist.service';
+import { ChecklistService } from '../../../shared/services/checklist.service';
 
 @Component({
   selector: 'app-add-task',

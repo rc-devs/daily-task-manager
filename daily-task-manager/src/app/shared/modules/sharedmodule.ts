@@ -1,7 +1,7 @@
 import { CommonModule, DatePipe } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { TaskCardComponent } from "../../checklist/task-card/task-card.component";
-import { AddTaskComponent } from "../../checklist/add-task/add-task.component";
+import { TaskCardComponent } from "../../features/checklist/task-card/task-card.component";
+import { AddTaskComponent } from "../../features/checklist/add-task/add-task.component";
 
 
 @NgModule ({

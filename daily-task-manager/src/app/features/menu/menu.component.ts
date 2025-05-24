@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { ChecklistComponent } from '../checklist/checklist.component';
 import { HistoryComponent } from '../history/history.component';
+import { ChecklistComponent } from '../checklist/checklist.component';
 
 @Component({
   selector: 'app-menu',

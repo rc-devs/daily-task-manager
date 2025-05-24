@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { ChecklistService } from '../shared/services/checklist.service';
-import { HistoryService } from '../shared/services/history.service';
 import { DatePipe } from '@angular/common';
+import { ChecklistService } from '../../shared/services/checklist.service';
+import { HistoryService } from '../../shared/services/history.service';
 
 @Component({
   selector: 'app-history',

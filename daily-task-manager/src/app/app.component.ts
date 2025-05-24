@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { MenuComponent } from './menu/menu.component';
+import { MenuComponent } from './features/menu/menu.component';
 
 @Component({
   selector: 'app-root',
